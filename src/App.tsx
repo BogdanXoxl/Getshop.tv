@@ -1,9 +1,13 @@
 import React, {FC, useRef} from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import {GlobalStyles, Container, Content, BackgroundVideo} from "./index.styles";
 import MainPage from "./pages/MainPage";
 import Layout from "./components/Layout";
+import FinalPage from "./pages/FinalPage";
+
+import {GlobalStyles, Container, Content, BackgroundVideo} from "./index.styles";
+
+
 
 const App:FC = () => {
     const vidRef = useRef<HTMLVideoElement>(null);
@@ -19,7 +23,7 @@ const App:FC = () => {
                         <Route index element={<MainPage play={play} pause={stop}/>}/>
                         <Route element={<Layout/>}>
                             <Route path="/form"/>
-                            <Route path="/final"/>
+                            <Route path="/final" element={<FinalPage play={play}/>}/>
                         </Route>
                     </Routes>
                 </Content>
