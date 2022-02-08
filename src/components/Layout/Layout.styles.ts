@@ -25,6 +25,10 @@ export const InfoContainer = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   padding: 1rem;
+
+  @media screen and (max-width: 620px){
+    display: none;
+  }
 `;
 
 export const QRContainer = styled.div`
