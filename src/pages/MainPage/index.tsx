@@ -16,7 +16,7 @@ const MainPage:FC<Props> = ({play, pause}) => {
     return (
         <Container>
             <Wrapper>
-                <Title>ИСПОЛНИТЕ МЕЧТУ ВАШЕГО МАЛЫША! ПОДАРИТЕ ЕМУ СОБАКУ!</Title>
+                <Title>ИСПОЛНИТЕ МЕЧТУ ВАШЕГО МАЛЫША! <br/> ПОДАРИТЕ ЕМУ СОБАКУ!</Title>
                 <img src="assets/QR.png" alt="qr" width={126}/>
                 <p>Сканируйте QR-код или нажмите ОК</p>
                 <Button to="/form" active color={"blue"} onClick={pause}>OK</Button>

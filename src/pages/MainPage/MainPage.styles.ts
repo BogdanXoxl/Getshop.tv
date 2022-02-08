@@ -29,7 +29,7 @@ export const Wrapper = styled.div`
   gap: 20px;
   
   p{
-    width: 126px;
+    width: 130px;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
