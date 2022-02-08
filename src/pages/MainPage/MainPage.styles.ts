@@ -8,6 +8,15 @@ export const Container = styled.div`
   
   width: 100vw;
   height: 100vh;
+
+  opacity: 0;
+  animation: ani 10s forwards;
+  @keyframes ani {
+      0% {opacity: 0;}
+      50% {opacity: 0;}
+      100% {opacity: 1;}
+  }
+  
 `;
 
 export const Wrapper = styled.div`
