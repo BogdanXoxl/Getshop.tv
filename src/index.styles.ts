@@ -1,11 +1,23 @@
 import styled, {createGlobalStyle} from "styled-components";
+import {Link} from "react-router-dom";
 
 export const GlobalStyles = createGlobalStyle`
+  
+  :root{
+    --blue: #86D3F4;
+    --black: #000000;
+    --white: #fff;
+  }
+  
+  
   /* Указываем box sizing */
   *,
   *::before,
   *::after {
     box-sizing: border-box;
+    font-family: Roboto sans-serif;
+    font-style: normal;
+    font-weight: 500;
   }
 
   /* Убираем внутренние отступы */
@@ -52,6 +64,7 @@ export const GlobalStyles = createGlobalStyle`
   /* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
   a:not([class]) {
     text-decoration-skip-ink: auto;
+    text-decoration: none;
   }
 
   /* Упрощаем работу с изображениями */
@@ -93,4 +106,23 @@ export const BackgroundVideo = styled.video`
   width: 100%;
   height: 100%;
   object-fit: cover;
+`;
+
+interface ButtonProps{
+    active?: boolean;
+    color?: "blue" | "black" | "white";
+}
+
+export const Button = styled(Link)<ButtonProps>`
+  padding: 1rem 4rem;
+  color: ${({color}) => 
+          color? `var(--${color})`: `var(--white)`};
+  background: ${({active}) => active? `var(--black)`: `var(--blue)`};
+  border: 2px solid var(--black);
+  text-decoration: none;
+  
+  &:active{
+    color: var(--white);
+    background: var(--black);
+  }
 `;
