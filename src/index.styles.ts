@@ -15,7 +15,7 @@ export const GlobalStyles = createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
-    font-family: Roboto sans-serif;
+    font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: 500;
   }
@@ -111,13 +111,20 @@ export const BackgroundVideo = styled.video`
 interface ButtonProps{
     active?: boolean;
     color?: "blue" | "black" | "white";
+    opacity?: number;
+    pd?: {
+        x: number;
+        y: number;
+    };
 }
 
 export const Button = styled(Link)<ButtonProps>`
-  padding: 1rem 4rem;
+  opacity: ${({opacity}) => opacity || 1};
+  padding: ${({pd}) => pd? `${pd.y}rem ${pd.x}rem` :"1rem 3rem"};
   color: ${({color}) => 
           color? `var(--${color})`: `var(--white)`};
-  background: ${({active}) => active? `var(--black)`: `var(--blue)`};
+  background: ${({active}) => 
+          active? `var(--black)`: `var(--white)`};
   border: 2px solid var(--black);
   text-decoration: none;
   
