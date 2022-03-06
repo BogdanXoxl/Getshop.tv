@@ -1,12 +1,8 @@
 import React, {FC} from 'react';
 import {Container, Description, Title} from './FinalPage.styles';
 
-interface Props{
-    play: () => void;
-}
 
-const FinalPage:FC<Props> = ({play}) => {
-    play();
+const FinalPage:FC = () => {
     return (
         <Container>
             <Title>ЗАЯВКА ПРИНЯТА</Title>

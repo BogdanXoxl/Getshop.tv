@@ -124,9 +124,10 @@ export const Button = styled(Link)<ButtonProps>`
   color: ${({color}) => 
           color? `var(--${color})`: `var(--white)`};
   background: ${({active}) => 
-          active? `var(--black)`: `var(--white)`};
+          active? `var(--black)`: ``};
   border: 2px solid var(--black);
   text-decoration: none;
+  text-align: center;
   
   &:active{
     color: var(--white);

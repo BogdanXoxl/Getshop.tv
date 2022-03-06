@@ -6,6 +6,7 @@ import Layout from "./components/Layout";
 import FinalPage from "./pages/FinalPage";
 
 import {GlobalStyles, Container, Content, BackgroundVideo} from "./index.styles";
+import FormPage from "./pages/FormPage";
 
 
 
@@ -20,10 +21,10 @@ const App:FC = () => {
             <Container>
                 <Content>
                     <Routes>
-                        <Route index element={<MainPage play={play} pause={stop}/>}/>
+                        <Route index element={<MainPage/>}/>
                         <Route element={<Layout/>}>
-                            <Route path="/form"/>
-                            <Route path="/final" element={<FinalPage play={play}/>}/>
+                            <Route path="/form" element={<FormPage play={play} pause={stop}/>}/>
+                            <Route path="/final" element={<FinalPage/>}/>
                         </Route>
                     </Routes>
                 </Content>
